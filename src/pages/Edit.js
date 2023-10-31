@@ -160,7 +160,7 @@ export class Edit extends Component {
                 <Button>
                   <FontAwesomeIcon icon={faPalette} size="2x" />
                   <div>색필터</div>
-                  {/* <ColorButton/> */}
+                  <ColorButton/>
                 </Button>
                 
            

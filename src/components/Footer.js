@@ -8,7 +8,10 @@ export class Footer extends Component {
     render() {
       return (
         <FooterContainer>
-            <Contents>이것은 푸터입니다.</Contents>
+            <Contents>
+              ⓒ Copyright PhotoCate<br/> Github: https://github.com/Yongsoojin/capstone
+              <br/>FE: 서혜인, BE: 용수진
+            </Contents>
         </FooterContainer>
       );
     }
@@ -23,10 +26,11 @@ const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: bottom;
-  height: 13vh;
+  height: 15vh;
 `;
 
 const Contents = styled.div`
-
+  text-align: cneter;
   color: white;
+  margin: auto 0;
 `;

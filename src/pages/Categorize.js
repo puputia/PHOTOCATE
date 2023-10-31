@@ -15,7 +15,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 const folders = [
   { name: "서혜인" },
   { name: "용수진" },
-  { name: "에펠탑" },
+  { name: "송강" },
   // 여러 폴더를 추가할 수 있습니다.
 ];
 
