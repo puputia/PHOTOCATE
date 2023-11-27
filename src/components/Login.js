@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 // import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import oc from "open-color";
@@ -22,12 +23,14 @@ export class Login extends Component {
               <LoginContents>
                 <LogoContainer>
                   <ImgContainer>
+                    <Link to="/">
                     <img
                       src={LogoImg}
                       alt="logo img"
                       height="100em"
                       width="110em"
                     />
+                    </Link>
                     <img src={LogoTit} alt="logo img" height="20em" />
                   </ImgContainer>
                   <ButtonGroup>
