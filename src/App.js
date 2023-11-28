@@ -8,6 +8,8 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import ImgShow from "./components/ImgShow.js";
 import Edit from "./pages/Edit.js";
+import FolderImgUpload from "./components/FolderImgUpload.js";
+import FolderUploader from "./components/FolderUploader.js";
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home/> } />
         <Route path="/Categorize" element={ <Categorize/> } />
+        <Route path="/FolderUpload" element={ <FolderImgUpload/> } />
+        <Route path="/FolderUploader" element={ <FolderUploader/> } />
         <Route path="/Edit" element={ <ImgUpload/> } />
         <Route path="/Login" element={ <Login/> } />
         <Route path="*" element={ <h1>이 페이지는 없는 페이지 입니당</h1> } />

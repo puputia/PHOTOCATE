@@ -6,7 +6,10 @@ const KakaoLogin = () => {
   useEffect(() => {
     // 카카오 SDK 초기화
     if (window.Kakao) {
-      window.Kakao.init('14700bc54118fa594a0e757ce25de03b'); // 여기에 REST API 키를 입력하세요
+      const initSuccess = window.Kakao.init('14700bc54118fa594a0e757ce25de03b');
+      if (!initSuccess) {
+        console.error('Failed to initialize Kakao SDK!');
+      }
     } else {
       console.error('Kakao SDK not loaded!');
     }
