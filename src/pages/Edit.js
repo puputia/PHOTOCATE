@@ -40,14 +40,14 @@ export class Edit extends Component {
     return (
       <EditWrapper>
         <Toolbar>
-          <DropdownButton
+          {/* <DropdownButton
             id="dropdown-basic-button"
             title="열기"
             style={{ margin: "auto" }}
           >
             <Dropdown.Item href="#/action-1">내 pc에서 열기</Dropdown.Item>
             <Dropdown.Item href="#/action-2">공유폴더 열기</Dropdown.Item>
-          </DropdownButton>
+          </DropdownButton> */}
 
           <FontAwesomeIcon
             icon={faCircleDown}
@@ -65,7 +65,7 @@ export class Edit extends Component {
             </div>
           </FileName>
 
-          <Back>
+          {/* <Back>
             <FontAwesomeIcon
               icon={faRotateLeft}
               style={{ marginRight: "15px" }}
@@ -74,7 +74,7 @@ export class Edit extends Component {
               icon={faRotateRight}
               style={{ marginRight: "15px" }}
             />
-          </Back>
+          </Back> */}
 
           <Zoom>
             <Button>

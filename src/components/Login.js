@@ -12,7 +12,7 @@ import KakaoLogo from "../assets/img/kakao.png";
 // import NaverLogo from "../assets/img/naver1.png";
 import NaverLogo from "../assets/img/naver3.png";
 import { Button } from 'react-bootstrap';
-
+import KakaoLogin from './KakaoLogin.js';
 
 export class Login extends Component {
     render() {
@@ -34,7 +34,8 @@ export class Login extends Component {
                     <img src={LogoTit} alt="logo img" height="20em" />
                   </ImgContainer>
                   <ButtonGroup>
-                    <Button
+                    <KakaoLogin/>
+                    {/* <Button
                       className="kakao-btn"
                       variant="warning mt-3"
                       size="lg"
@@ -63,7 +64,7 @@ export class Login extends Component {
                         alt="카카오톡 공유"
                       />
                       카카오로 로그인하기
-                    </Button>
+                    </Button> */}
                     <Button
                       className="naver-btn"
                       variant="success mt-3"
