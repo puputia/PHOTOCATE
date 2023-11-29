@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolder } from "@fortawesome/free-solid-svg-icons";
 import Button from 'react-bootstrap/Button';
 
-const Folder = ({ folderName }) => {
+const Folder = ({ folderName, onClick }) => {
   return (
     <Button
       variant="outline-success"
@@ -14,6 +14,7 @@ const Folder = ({ folderName }) => {
         backgroundColor: "white",
         color: "black"
       }}
+      onClick={onClick}
     >
       <FontAwesomeIcon icon={faFolder} style={{ height: "20vh", color: "#A286DB" }} />
       <div>{folderName}</div>

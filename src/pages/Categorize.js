@@ -1,4 +1,6 @@
-import React from "react";
+// Categorize.js
+
+import React, { useState } from "react";
 import styled from "styled-components";
 import oc from "open-color";
 import "../App.css";
@@ -11,47 +13,67 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "react-bootstrap/Button";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-
 const folders = [
-  { name: "서혜인" },
-  { name: "용수진" },
-  { name: "송강" },
-  // 여러 폴더를 추가할 수 있습니다.
+  {
+    name: "서혜인",
+    subfolders: [
+      { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] },
+    ],
+  },
+  {
+    name: "용수진",
+    subfolders: [
+      { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] },
+    ],
+  },
+  {
+    name: "송강",
+    subfolders: [
+      { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] },
+    ],
+  },
+  // 필요에 따라 더 많은 폴더 및 서브폴더를 추가하세요.
 ];
 
-
-
 const Categorize = () => {
+  const [selectedFolder, setSelectedFolder] = useState(null);
+  const [currentPath, setCurrentPath] = useState([]);
+
+  const handleFolderClick = (folder) => {
+    setSelectedFolder(folder);
+
+    // 클릭한 폴더의 이름을 현재 경로에 추가
+    setCurrentPath((prevPath) => [...prevPath, folder.name]);
+  };
+
   return (
     <CateContainer>
       <Header />
 
       <TitleWrap>
-        <Title>
-          {/* 공유폴더 */}
-          📂&nbsp;서울 여행&nbsp;
-          <FontAwesomeIcon icon={faChevronRight} style={{ color: "gray" }} />
-        </Title>
-        {/* 사용자폴더 */}
-        <Title>
-          📂&nbsp;서혜인&nbsp;
-          <FontAwesomeIcon icon={faChevronRight} style={{ color: "gray" }} />
-        </Title>
-        {/* 장소폴더 */}
-        <Title>
-          📂&nbsp;잠실&nbsp;
-          <FontAwesomeIcon icon={faChevronRight} style={{ color: "gray" }} />
-        </Title>
-        {/* 시간폴더 */}
-        <Title>
-          📂&nbsp;20231011&nbsp;
-          <FontAwesomeIcon icon={faChevronRight} style={{ color: "gray" }} />
-        </Title>
+        {currentPath.length > 0 ? (
+          <>
+            {currentPath.map((folderName, index) => (
+              <Title key={index}>
+                📂&nbsp;{folderName}&nbsp;
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  style={{ color: "gray" }}
+                />
+              </Title>
+            ))}
+          </>
+        ) : (
+          <Title>📂&nbsp;공유 폴더&nbsp;</Title>
+        )}
       </TitleWrap>
 
       <CateContents>
         <Container>
-          <FolderList folders={folders} />
+          <FolderList
+            folders={selectedFolder ? selectedFolder.subfolders || [] : folders}
+            onFolderClick={handleFolderClick}
+          />
         </Container>
       </CateContents>
     </CateContainer>
