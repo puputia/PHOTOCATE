@@ -23,7 +23,7 @@ const KakaoLogin = () => {
       });
     } else {
       console.error('Kakao SDK or Auth not available!');
-    }
+    } 
   };
 
   return (

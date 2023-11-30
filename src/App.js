@@ -22,7 +22,7 @@ function App() {
         <Route path="/Categorize" element={ <Categorize/> } />
         <Route path="/FolderUpload" element={ <FolderImgUpload/> } />
         <Route path="/FolderUploader" element={ <FolderUploader/> } />
-        <Route path="/Edit" element={ <ImgUpload/> } />
+        <Route path="/Edit" element={ <Edit/> } />
         <Route path="/Login" element={ <Login/> } />
         <Route path="*" element={ <h1>이 페이지는 없는 페이지 입니당</h1> } />
       </Routes>
