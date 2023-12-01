@@ -7,39 +7,51 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faSearchMinus } from "@fortawesome/free-solid-svg-icons";
+import { faSearchPlus } from "@fortawesome/free-solid-svg-icons";
+import { faRedo } from "@fortawesome/free-solid-svg-icons";
 import { faRotateLeft } from "@fortawesome/free-solid-svg-icons";
-import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
+
 import { faCircleDown } from "@fortawesome/free-solid-svg-icons";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import { faChessBoard } from "@fortawesome/free-solid-svg-icons";
 import Photo from "../assets/love.png";
-import {ChromePicker} from 'react-color';
+// import {ChromePicker} from 'react-color';
 import ColorButton from '../components/ColorButton';
-
+import { useControls, TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 // import from "../style/Editstyle.css";
-import {
-  TransformWrapper,
-  TransformComponent,
-  useControls
-} from "react-zoom-pan-pinch";
 
-const Controls = () => {
-  const { zoomIn, zoomOut, resetTransform } = useControls();
-  return (
-    <>
-      <button onClick={() => zoomIn()}>Zoom In</button>
-      <button onClick={() => zoomOut()}>Zoom Out</button>
-      <button onClick={() => resetTransform()}>Reset</button>
-    </>
-  );
-};
+
+
+// 포토URL경로
+// const Photo = "URL_OF_YOUR_PHOTO";
+
 export class Edit extends Component {
   render() {
+    const Controls = () => {
+      const { zoomIn, zoomOut, resetTransform } = useControls();
+      return (
+        <>
+          <Zoom>
+            <Button onClick={() => zoomIn()}>
+              <FontAwesomeIcon icon={faSearchPlus} /> Zoom In
+            </Button>
+            <Button onClick={() => zoomOut()}>
+              <FontAwesomeIcon icon={faSearchMinus} /> Zoom Out
+            </Button>
+            <Button onClick={() => resetTransform()}>
+              <FontAwesomeIcon icon={faRedo} /> Reset
+            </Button>
+          </Zoom>
+        </>
+      );
+    };
+    
     return (
       <EditWrapper>
         <Toolbar>
+          
           {/* <DropdownButton
             id="dropdown-basic-button"
             title="열기"
@@ -65,22 +77,16 @@ export class Edit extends Component {
             </div>
           </FileName>
 
-          {/* <Back>
+          <Back>
             <FontAwesomeIcon
               icon={faRotateLeft}
               style={{ marginRight: "15px" }}
             />
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               icon={faRotateRight}
               style={{ marginRight: "15px" }}
-            />
-          </Back> */}
-
-          <Zoom>
-            <Button>
-              <FontAwesomeIcon icon={faMagnifyingGlass} /> 확대
-            </Button>
-          </Zoom>
+            /> */}
+          </Back>
         </Toolbar>
         <EditContents>
           <TransformWrapper>
@@ -95,19 +101,7 @@ export class Edit extends Component {
             </ImageArea>
           </TransformComponent>
           </TransformWrapper>
-        {/* <TransformWrapper initialScale={1} minScale={1} maxScale={5}>
-            <TransformComponent>
-              <figure>
-                <ImageArea>
-                  <img
-                    src={Photo}
-                    alt="logo img"
-                    style={{ width: "100%" }}
-                  />
-                </ImageArea>
-              </figure>
-            </TransformComponent>
-          </TransformWrapper> */}
+       
         </EditContents>
         <EditControl>
           <Mosaic>
@@ -160,7 +154,7 @@ export class Edit extends Component {
                 <Button>
                   <FontAwesomeIcon icon={faPalette} size="2x" />
                   <div>색필터</div>
-                  <ColorButton/>
+                  
                 </Button>
                 
            
@@ -241,9 +235,9 @@ const EditControl = styled.div`
 const Zoom = styled.div`
   flex-direction: row;
 
-  margin: 20px auto;
+  // margin: 20px auto;
 
-  text-align: right;
+  text-align: center;
   align-items: center;
 `;
 

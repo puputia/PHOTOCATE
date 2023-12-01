@@ -15,21 +15,72 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const folders = [
   {
-    name: "서혜인",
+    name: "공유폴더 1",
     subfolders: [
-      { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] },
+      {
+        name: "서혜인",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
+      {
+        name: "용수진",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
+      {
+        name: "송강",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
     ],
   },
   {
-    name: "용수진",
+    name: "공유폴더 2",
     subfolders: [
-      { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] },
+      {
+        name: "서혜인",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
+      {
+        name: "용수진",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
+      {
+        name: "송강",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
     ],
   },
   {
-    name: "송강",
+    name: "공유폴더 3",
     subfolders: [
-      { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] },
+      {
+        name: "서혜인",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
+      {
+        name: "용수진",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
+      {
+        name: "송강",
+        subfolders: [
+          { name: "장소별", subfolders: [{ name: "시간별", subfolders: [] }] }
+        ],
+      },
     ],
   },
   // 필요에 따라 더 많은 폴더 및 서브폴더를 추가하세요.
