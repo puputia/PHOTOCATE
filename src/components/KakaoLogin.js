@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import KakaoLogo from '../assets/img/kakao.png';
+import { useNavigate } from 'react-router-dom'; // 수정된 부분
 
 const KakaoLogin = () => {
+  const navigate = useNavigate(); // 수정된 부분
+
   useEffect(() => {
     // 카카오 SDK 초기화
     if (window.Kakao) {
@@ -20,10 +23,19 @@ const KakaoLogin = () => {
     if (window.Kakao && window.Kakao.Auth) {
       window.Kakao.Auth.authorize({
         redirectUri: 'http://localhost:3000/oauth/login',
+        success: function (authObj) {
+          console.log('Successful login:', authObj);
+
+          // 리다이렉션 성공 시 Home2로 이동
+          navigate('/Home2'); // 수정된 부분
+        },
+        fail: function (err) {
+          console.error('Failed to redirect:', err);
+        },
       });
     } else {
       console.error('Kakao SDK or Auth not available!');
-    } 
+    }
   };
 
   return (

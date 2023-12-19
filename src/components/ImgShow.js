@@ -48,7 +48,7 @@ export class ImgShow extends Component {
                   />
                   <Card.Body>
                     <Card.Title>kakaotalk20211024</Card.Title>
-                    <Card.Text>롯데월드에서 아마네랑</Card.Text>
+                    {/* <Card.Text>롯데월드에서 아마네랑</Card.Text> */}
                   </Card.Body>
                 </Card>
               </Col>

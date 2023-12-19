@@ -7,13 +7,13 @@ import "../App.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Profile from "../assets/user.png";
+import Profile from "../assets/header_profile.jpg";
 
 // Header 함수형 컴포넌트
 const Header = () => {
   const handleLoginClick = () => {
     // 로그인 페이지로 이동하는 코드
-    window.location.href = '/login'; // 적절한 경로로 변경
+    window.location.href = '/Categorize'; // 적절한 경로로 변경
   };
 
   return (
@@ -31,9 +31,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/Categorize">Photo Categorize</Nav.Link>
             <Nav.Link as={Link} to="/Edit">Photo Edit</Nav.Link>
           </Nav>
-          <Button style={{borderRadius:"20px"}} onClick={handleLoginClick}>
+          <Button style={{}} onClick={handleLoginClick}>
             <img src={Profile} alt="logo img" height="30em" width="30em" style={{margin:"5px auto"}} />
-            &nbsp;로그인하기&nbsp;
+            &nbsp;혜인님&nbsp;
           </Button>
         </Container>
       </Navbar>

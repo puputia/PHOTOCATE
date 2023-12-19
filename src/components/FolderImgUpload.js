@@ -3,7 +3,7 @@ import styled from "styled-components";
 import oc from "open-color";
 import "../App.css";
 
-import Header from "../components/Header.js";
+// import Header from "../components/Header.js";
 import Folder from "../assets/Folder.png";
 import FolderUploader from "./FolderUploader.js";
 
@@ -11,8 +11,9 @@ class ImgUpload extends Component {
   render() {
     return (
       <UploadContainer>
-        <Header />
-        <Title>공유파일 폴더 업로드</Title>
+        {/* <Header /> */}
+        
+        <Title>이 폴더는 이미지가 없는 폴더 입니다 ❗</Title>
         <SubTitle>
           이미지들을 한 폴더에 넣은 후 <br />
           이미지들이 저장된 폴더를 업로드 해주세요
@@ -41,7 +42,7 @@ const UploadContainer = styled.div`
     flex-direction: column;
     justify-contents : center;
     max-width: 100%
-    height:150vh;
+    height:100vh;
     background-color: ${oc.grape[0]}
     
 `;
@@ -52,7 +53,8 @@ const Title = styled.div`
   margin: 0 auto;
   padding-top: 45px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
+  font-family: 'yg-jalnan';
 `;
 
 const SubTitle = styled.div`

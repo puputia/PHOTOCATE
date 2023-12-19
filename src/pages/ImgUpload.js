@@ -3,7 +3,7 @@ import styled from "styled-components";
 import oc from "open-color";
 import "../App.css";
 
-import Header from "../components/Header.js";
+import Header from "../components/Header2.js";
 // import Folder from "../assets/Folder.png";
 import Local from "../assets/Local.png";
 

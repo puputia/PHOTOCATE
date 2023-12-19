@@ -17,13 +17,15 @@ import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import { faChessBoard } from "@fortawesome/free-solid-svg-icons";
 import Photo from "../assets/love.png";
-// import {ChromePicker} from 'react-color';
-import ColorButton from '../components/ColorButton';
+import Profile from "../assets/user.png";
+
 import { useControls, TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 // import from "../style/Editstyle.css";
-
-
-
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
+import LogoImg from "../assets/Logo/pnglogo.png";
 // 포토URL경로
 // const Photo = "URL_OF_YOUR_PHOTO";
 
@@ -51,42 +53,27 @@ export class Edit extends Component {
     return (
       <EditWrapper>
         <Toolbar>
-          
-          {/* <DropdownButton
-            id="dropdown-basic-button"
-            title="열기"
-            style={{ margin: "auto" }}
-          >
-            <Dropdown.Item href="#/action-1">내 pc에서 열기</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">공유폴더 열기</Dropdown.Item>
-          </DropdownButton> */}
+            <LogoContainer>
+              <LogoBox>
+                <img src={LogoImg} alt="logo img" height="35em" width="45em" />
+              </LogoBox>
+              <Navbar.Brand as={Link} to="/" style={{ fontFamily: "yg-jalnan" }}>
+                PHOTOCATE 
+              </Navbar.Brand>
+            </LogoContainer>
+            
+            
+        
 
-          <FontAwesomeIcon
-            icon={faCircleDown}
-            size="2x"
-            style={{
-              margin: "14px auto",
-              textAlign: "left",
-              marginLeft: "-120px",
-            }}
-          />
+          
 
           <FileName>
-            <div class="filename" style={{ margin: "auto", marginLeft: "2em" }}>
+            <div style={{ margin: "auto", marginLeft: "31.5em", display:"flex", alignItems: "center", textAlign:"ceter" }}>
               kakaotalk202230505.jpg
             </div>
           </FileName>
 
-          <Back>
-            <FontAwesomeIcon
-              icon={faRotateLeft}
-              style={{ marginRight: "15px" }}
-            />
-            {/* <FontAwesomeIcon
-              icon={faRotateRight}
-              style={{ marginRight: "15px" }}
-            /> */}
-          </Back>
+          
         </Toolbar>
         <EditContents>
           <TransformWrapper>
@@ -151,7 +138,9 @@ export class Edit extends Component {
             </Dropdown>
           </Blur>
           <ColorFilter>
-                <Button>
+                <Button variant="gray"  style={{paddingleft: "10px",
+                  color: "white",
+                  backgroundColor: "none"}}>
                   <FontAwesomeIcon icon={faPalette} size="2x" />
                   <div>색필터</div>
                   
@@ -173,7 +162,7 @@ const EditWrapper = styled.div`
     max-width: 100%
     height:100vh;
     background-color: ${oc.gray[9]};
-   
+    oveflow-x:hidden;
 `;
 
 // const EditContainer = styled.div`
@@ -214,8 +203,9 @@ const ImageArea = styled.div`
 
 const EditContents = styled.div`
     max-width: 100%
-    width: 300vh;
+    width: 280vh;
     height: 80vh;
+     
     background-color: ${oc.gray[9]};
 
 `;
@@ -241,16 +231,7 @@ const Zoom = styled.div`
   align-items: center;
 `;
 
-const Back = styled.div`
-  
-    flex-direction: row;
-   
-    margin : 20px auto;
-    margin-right :  -100px
-    text-align: right;
-    align-items:center;
-   
-`;
+
 
 const Mosaic = styled.div`
   margin: 5px auto;
@@ -268,4 +249,17 @@ const Blur = styled.div`
 const ColorFilter = styled.div`
   flex-direction: column;
   margin: 5px auto;
+`;
+
+
+const LogoBox = styled.div`
+  margin-right: 8px;
+`;
+
+const LogoContainer = styled.div`
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+  margin-left: 5em;
 `;
