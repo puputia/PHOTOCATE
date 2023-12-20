@@ -13,19 +13,23 @@ import Button from "react-bootstrap/Button";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Imgshow2 from "../components/Imgshow2";
 import FolderUploader from "../components/FolderImgUpload.js";
+import { useNavigate } from "react-router-dom";
+import Photo from "../assets/love.png";
+import PhotoEdit from "../pages/Edit.js";
+
 // 이미지 데이터를 가져오는 함수
 const getImagesByFolderName = (folderName) => {
   // 각 폴더에 대한 이미지 데이터를 가져오는 로직을 작성하세요.
   // 예를 들어, "공유폴더 1" 폴더에 대한 이미지 데이터를 가져오려면:
   if (folderName === "요코하마") {
     return [
-      { src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "요코하마" },{ src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "요코하마" },{ src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "요코하마" },{ src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "요코하마" },
+      { src: Photo, title: "요코하마" },{ src: Photo, title: "요코하마" },{ src: Photo, title: "요코하마" },{ src: Photo, title: "요코하마" },
       
       // 다른 이미지 정보를 추가할 수 있습니다.
     ];
   } else if (folderName === "20231117") {
     return [
-      { src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "2023-11-17" },{ src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "2023-11-17" },{ src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "2023-11-17" },{ src: "https://pbs.twimg.com/media/GArvWOvaQAA3HII?format=jpg&name=large", title: "2023-11-17" }
+      { src: Photo, title: "2023-11-17" },{ src: Photo, title: "2023-11-17" },{ src: Photo, title: "2023-11-17" },{ src: Photo, title: "2023-11-17" }
       // 서혜인 폴더에 대한 이미지 데이터
     ];
  
@@ -142,6 +146,14 @@ const folders = [
 ];
 
 const Categorize = () => {
+  const navigate = useNavigate(); // useNavigate 훅 사용
+
+
+  const handleImageClick = () => {
+    // 이미지를 클릭했을 때 Edit.js 페이지로 이동
+    navigate("/Edit");
+  };
+
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [currentPath, setCurrentPath] = useState([]);
 
@@ -186,7 +198,7 @@ const Categorize = () => {
             <FolderUploader />
           )}
           {selectedFolder && (
-            <Imgshow2 images={getImagesByFolderName(selectedFolder.name)} />
+            <Imgshow2 images={getImagesByFolderName(selectedFolder.name)} onImageClick={handleImageClick} /> // 이미지 클릭 이벤트 핸들러 추가
           )}
           <FolderList
             folders={selectedFolder ? selectedFolder.subfolders || [] : folders}
