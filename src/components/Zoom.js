@@ -1,9 +1,9 @@
 import React from "react";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { TransformWrapper, TransformComponent, useControls } from "react-zoom-pan-pinch";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchPlus, faSearchMinus, faRedo } from "@fortawesome/free-solid-svg-icons";
-import { useControls, TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
 const Controls = () => {
   const { zoomIn, zoomOut, resetTransform } = useControls(); // useControls를 어떻게 가져오는지에 따라 수정 필요
 
