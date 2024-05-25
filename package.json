@@ -64,6 +64,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.24.6",
     "html-loader": "^4.2.0",
     "webpack-dev-middleware": "^7.2.1"
   }
